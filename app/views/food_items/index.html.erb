@@ -1,0 +1,59 @@
+<ul class="list-group">
+  <li class="list-group-item" v-on:click="toggleApps()">Appetizers</li>
+  <li class="list-group-item" v-on:click="toggleMains()">Main Courses</li>
+  <li class="list-group-item" v-on:click="toggleDesserts()">Desserts</li>
+  <li class="list-group-item" v-on:click="toggleSides()">Sides</li>
+</ul>
+  <ul v-if="showApps">
+    <% @items.each do |item| %>
+      <% if item.category == 'Appetizer' %>
+        <div>
+          <a href="/food/<%= item.id %>"><%= item.name %></a>
+          <ul>
+            <li>$<%= item.price %></li>
+            <li><%= item.description %></li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+  <ul v-if="showMains">
+    <% @items.each do |item| %>
+      <% if item.category == 'Main Course' %>
+        <div>
+          <a href="/food/<%= item.id %>"><%= item.name %></a>
+          <ul>
+            <li>$<%= item.price %></li>
+            <li><%= item.description %></li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+  <ul v-if="showSides">
+    <% @items.each do |item| %>
+      <% if item.category == 'Side' %>
+        <div>
+          <a href="/food/<%= item.id %>"><%= item.name %></a>
+          <ul>
+            <li>$<%= item.price %></li>
+            <li><%= item.description %></li>
+          </ul>
+        </div>
+        <% end %>
+    <% end %>
+  </ul>
+  <ul v-if="showDesserts">
+    <% @items.each do |item| %>
+      <% if item.category == 'Dessert' %>
+        <div>
+          <a href="/food/<%= item.id %>"><%= item.name %></a>
+          <ul>
+            <li>$<%= item.price %></li>
+            <li><%= item.description %></li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+

@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-block">
+    <h3 class="card-title"><%= @food.name %></h3>
+    <h6 class="card-subtitle mb-2 text-muted">Price: $<%= @food.price %></h6>
+    <p class="card-text">Description: <%= @food.description %></p>
+    <div>
+      <%= form_tag "/yourshoppingcart", method: :post do %>
+        Quantity: <input type="text" name="quantity">
+        <input type="hidden" name="food_item_id" value="<%= @food.id %>">
+        <input type="submit" value="Add to cart!">
+      <% end %>
+    </div>
+    <div class="card-link">
+      <%= link_to "Edit", "/food/#{@food.id}/edit", {:class => "card-link"} %>
+    </div>
+    <div class="card-link">
+      <%= link_to "Delete", "/food/#{@food.id}", method: :delete %>
+    </div>
+    <a href="/" class="card-link">Back to the Menu</a>
+  </div>
+</div>
+
+
+
+

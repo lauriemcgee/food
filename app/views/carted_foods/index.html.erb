@@ -1,0 +1,20 @@
+
+<div class="card">
+  <% @carted_foods.each do |carted_food| %>
+    <div class="card-block">
+      <h3 class="card-title"><%= carted_food.food_item.name %></h3>
+      <h5 class="card-subtitle mb-2 text-muted">Quantity: <%= carted_food.quantity %></h5>
+      <div class="card-link">
+        <%= form_tag "/yourshoppingcart/#{carted_food.id}", method: :delete do %>
+          <input type="submit" class="btn btn-default" value="Remove from cart">
+        <% end %>
+      </div>
+      <a href="/" class="card-link">Want more food?</a>
+    </div>
+  <% end %>
+  <div class="card-link checkout">
+    <%= form_tag "/orders", method: :post do %>
+    <input type="submit" class="btn btn-default" value="Check Out!">
+  <% end %>
+</div>
+</div>

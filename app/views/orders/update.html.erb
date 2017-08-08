@@ -1,0 +1,20 @@
+
+
+<div class="card">
+  <h3 class="card-header">Order Info With Tip</h3>
+  <p>Order id: <%= @order.id %></p>
+  <% @order.carted_foods.each do |carted_food| %>
+      <div class="card-block">
+        <h4 class="card-title">Food: <%= carted_food.food_item.name %></h4>
+        <p class="card-text">Quantity: <%= carted_food.quantity %></p>
+        <a href="#" class="btn btn-primary">Change Quantity</a>
+      </div>
+  <% end %>
+  <div class="card-block">
+    <h3>Subtotal: $<%= @order.subtotal %></h3>
+    <h3>Tax: $<%= @order.tax %></h3>
+    <h3>Tip: $<%= @order.tip_amount %></h3>
+    <h3>Total: $<%= @order.total %></h3>
+    <%= link_to "Add Tip", "/orders/#{@order.id}/edit", class: "btn btn-success" %>
+  </div>
+</div>

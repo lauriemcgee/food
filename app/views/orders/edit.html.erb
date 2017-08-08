@@ -1,0 +1,13 @@
+
+<%= form_tag "/orders/#{@order.id}", method: :patch do %>
+<div>
+    Add a Tip?: 
+    <select name='tip_number'>
+      <option value="0">No Thanks</option>
+      <option value="10">10%</option>
+      <option value="15">15%</option>
+      <option value="20">20%</option>
+    </select>
+ </div>
+ <input type='submit' value='submit'>
+ <% end %>

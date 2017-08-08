@@ -1,0 +1,9 @@
+<h2> EDIT AWAY, MY FRIEND </h2>
+
+<div>
+<%= render 'form', url: "/food/#{@food.id}", verb: :patch, message: 'Update your food!' %>
+</div>
+
+<div>
+  <a href='/'>Changed my mind--take me home</a>
+</div>
